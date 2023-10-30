@@ -5,6 +5,6 @@ data:
   DB_NAME: "postgres"
   DB_HOST: "postgres-svc-postgresql"
   DB_PORT: "5432"
-  APP_PORT: "5153"
+  APP_PORT: 5153
 metadata:
   name: db-env
