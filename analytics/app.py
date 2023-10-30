@@ -12,6 +12,13 @@ from config import app, db
 
 port_number = int(os.environ.get("APP_PORT", 5153))
 
+class Token(Base): 
+    __tablename__ = 'tokens'
+    id = Column(Integer, primary_key=True) 
+    user_id = Column(Integer) 
+    token = Column(String) 
+    created_at = Column(DateTime) 
+    used_at = Column(DateTime) 
 
 @app.route("/health_check")
 def health_check():
