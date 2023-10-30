@@ -29,20 +29,20 @@ spec:
     spec:
       containers:
       - name: coworking-api
-        image: 452063976112.dkr.ecr.us-east-1.amazonaws.com/coworking-checkin:0.0.7
+        image: 452063976112.dkr.ecr.us-east-1.amazonaws.com/coworking-checkin:0.0.8
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
             path: /health_check
             port: 5153
-          initialDelaySeconds: 5
-          timeoutSeconds: 2
+          initialDelaySeconds: 50
+          timeoutSeconds: 50
         readinessProbe:
           httpGet:
             path: "/readiness_check"
             port: 5153
-          initialDelaySeconds: 5
-          timeoutSeconds: 5
+          initialDelaySeconds: 50
+          timeoutSeconds: 50
         env:
         - name: APP_PORT
           valueFrom:
